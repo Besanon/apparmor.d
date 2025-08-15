@@ -23,6 +23,7 @@ profile kwin_wayland @{exec_path} flags=(attach_disconnected mediate_deleted) {
 
   signal (receive) set=term peer=sddm,
   signal (receive) set=(kill, term) peer=kwin_wayland_wrapper,
+  signal (send) set=(kill, term) peer=lxqt-session,
   signal (send) set=(kill, term) peer=xwayland,
 
   network netlink raw,
